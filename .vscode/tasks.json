@@ -1,0 +1,11 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start turtlesim",
+      "type": "shell",
+      "command": "ros2 run turtlesim turtlesim_node",
+      "problemMatcher": []
+    }
+  ]
+}
