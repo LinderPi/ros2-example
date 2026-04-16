@@ -1,0 +1,21 @@
+{
+  "name": "ROS 2 Development Container",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "USERNAME": "lipa"
+    }
+  },
+  "containerEnv": {
+    "QT_QPA_PLATFORM": "vnc",
+    "ROS_DOMAIN_ID": "18",
+    "ROS_AUTOMATIC_DISCOVERY_RANGE": "LOCALHOST"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions":[
+        "ranch-hand-robotics.rde-pack"
+      ]
+    }
+  }
+}
