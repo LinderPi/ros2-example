@@ -1,11 +1,11 @@
-FROM ros:rolling
+FROM ros:jazzy
 
 ARG USERNAME
 ARG USER_UID=1001
 ARG USER_GID=$USER_UID
 
-RUN apt update && apt upgrade -y && apt install -y ros-rolling-turtlesim
-RUN echo "source /opt/ros/rolling/setup.bash" >> /etc/bash.bashrc
+RUN apt update && apt upgrade -y && apt install -y ros-jazzy-turtlesim
+RUN echo "source /opt/ros/jazzy/setup.bash" >> /etc/bash.bashrc
 
 RUN groupadd -g ${USER_GID} ${USERNAME} && useradd -u ${USER_UID} -g ${USER_GID} -m -s /bin/bash ${USERNAME}
 
