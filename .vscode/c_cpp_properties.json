@@ -1,0 +1,18 @@
+{
+  "configurations": [
+    {
+      "name": "ROS 2",
+      "compilerPath": "/usr/bin/g++",
+      "intelliSenseMode": "linux-gcc-arm64",
+      "includePath": [
+        "/opt/ros/jazzy/include/**",
+        "/workspaces/ros_playground/src/examples/rclcpp/composition/minimal_composition/include/**",
+        "/workspaces/ros_playground/src/examples/rclcpp/executors/cbg_executor/include/**",
+        "/workspaces/ros_playground/src/examples/rclcpp/wait_set/include/**"
+      ],
+      "cStandard": "${default}",
+      "cppStandard": "${default}"
+    }
+  ],
+  "version": 4
+}
