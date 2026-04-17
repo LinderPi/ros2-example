@@ -2,6 +2,34 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "Install dependencies",
+      "type": "shell",
+      "command": "rosdep update && rosdep install -y -i --from-paths src/",
+      "problemMatcher": []
+    },
+    {
+      "label": "Build workspace",
+      "type": "shell",
+      "group": "build",
+      "command": "colcon build --symlink-install",
+      "dependsOn": "Install dependencies",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run tests",
+      "type": "shell",
+      "group": "test",
+      "command": "colcon test",
+      "dependsOn": "Build workspace",
+      "problemMatcher": []
+    },
+    {
+      "label": "Clean workspace",
+      "type": "shell",
+      "command": "rm -rf build/ install/ log/",
+      "problemMatcher": []
+    },
+    {
       "label": "Start turtlesim",
       "type": "shell",
       "command": "ros2 run turtlesim turtlesim_node",

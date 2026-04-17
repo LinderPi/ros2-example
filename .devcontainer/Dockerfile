@@ -7,6 +7,8 @@ ARG USER_GID=$USER_UID
 RUN apt update && apt upgrade -y && apt install -y ros-jazzy-turtlesim
 RUN echo "source /opt/ros/jazzy/setup.bash" >> /etc/bash.bashrc
 
-RUN groupadd -g ${USER_GID} ${USERNAME} && useradd -u ${USER_UID} -g ${USER_GID} -m -s /bin/bash ${USERNAME}
+RUN groupadd -g ${USER_GID} ${USERNAME} && \
+    useradd -u ${USER_UID} -g ${USER_GID} -m -s /bin/bash ${USERNAME} && \
+    echo "${USERNAME} ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/${USERNAME}
 
 USER ${USERNAME}
